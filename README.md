@@ -1,53 +1,142 @@
-# Building recovery online made easy #
+# MoodyMe 😊 - تطبيق تسجيل المزاج اليومي
 
-## Important notice ##
-### Users reported build errors forking to own account. ###
-### To fix this, create a new organization, fork to the new organization. This fixes the problem, for now.
+تطبيق ويب بسيط وجميل لتتبع مزاجك اليومي مع إمكانيات متقدمة لتسجيل الملاحظات والوسائط.
 
-#### What this is ####
+## ✨ المميزات الرئيسية
 
-This is an easy way for recovery maintainers or anyone who's interested in building recoveries to finish their dream without a server.
+### 🎭 تسجيل المزاج
+- **6 حالات مزاجية مختلفة** مع رسوم متحركة تفاعلية (Lottie Animations)
+- سعيد، عادي، حزين، غاضب، مكتئب، مرتاح
+- واجهة بديهية مع تأثيرات حركية جميلة
 
-This works with GitHub actions, thank GitHub not me.
+### 📝 إضافة المحتوى
+- **كتابة ملاحظات يومية** مفصلة
+- **رفع الصور** لحفظ لحظات مهمة
+- **تسجيل الصوت** لحفظ مشاعرك بصوتك
 
-#### How to use ####
+### 📊 التحليلات والإحصائيات
+- **رسوم بيانية تفاعلية** لأنماط مزاجك
+- **إحصائيات مفصلة** بالنسب المئوية
+- **تتبع التقدم** عبر الزمن
 
-Here are some useful notes to using this tool brewed with black magic.
+### 🕐 تتبع التاريخ
+- **أرشيف كامل** لجميع إدخالاتك السابقة
+- **تصفح سهل** مع التواريخ الهجرية والميلادية
+- **عرض الوسائط** المحفوظة
 
-1. Fork the repo to a organization
+### ⚙️ الإعدادات المتقدمة
+- **الوضع الليلي/النهاري** للراحة البصرية
+- **قفل التطبيق** لحماية خصوصيتك
+- **إدارة البيانات** مع إمكانية المسح الكامل
 
-2. Set the variables, as listed below.
+## 🚀 التقنيات المستخدمة
 
-Update : If you don't understand the manifest variable, check [this](https://github.com/Area69Lab/Recovery-builder/blob/master/guide.md)
+- **HTML5** - هيكل التطبيق
+- **CSS3** - التصميم والحركات
+- **JavaScript** - الوظائف التفاعلية
+- **Lottie Animations** - الرسوم المتحركة
+- **LocalStorage** - حفظ البيانات محلياً
+- **PWA** - تطبيق ويب تقدمي قابل للتثبيت
+- **Responsive Design** - متوافق مع جميع الأجهزة
 
-Some variables that you'd like to set:
+## 📱 التوافق
 
-```MANIFEST : Link to your recovery manifest, Google it if you don't know what this is```
+- ✅ **Chrome/Edge** (الأحدث)
+- ✅ **Firefox** (الأحدث)  
+- ✅ **Safari** (iOS/macOS)
+- ✅ **الهواتف الذكية** (Android/iOS)
+- ✅ **الأجهزة اللوحية**
+- ✅ **أجهزة سطح المكتب**
 
-```DEVICE : Most likely your device codename, e.g. rosy, sakura, curtana, etc.```
+## 🔧 كيفية الاستخدام
 
-```DT_LINK : Link to your recovery device tree.```
+### التشغيل المحلي
+1. احفظ جميع الملفات في مجلد واحد
+2. افتح `index.html` في المتصفح
+3. ابدأ في تسجيل مزاجك!
 
-```DT_PATH : Path to clone your device tree ```
+### النشر على الويب
+1. ارفع الملفات لاستضافة ويب
+2. تأكد من تفعيل HTTPS للميزات المتقدمة
+3. شارك الرابط مع الآخرين
 
-```TARGET : recoveryimage or bootimage, depending on if your phone has a recovery partition or not ```
+## 🎯 كيفية الاستخدام
 
-3. Go to actions tab, enable workflows.
+### 1. تسجيل المزاج اليومي
+- اختر الحالة المزاجية من البطاقات الست
+- اكتب ملاحظاتك عن اليوم
+- أضف صورة أو تسجيل صوتي (اختياري)
+- اضغط "احفظ يومي"
 
-4. Star the repo, go to actions tab again, and let black magic go brrr.
+### 2. مراجعة التاريخ
+- انتقل لصفحة "الأيام السابقة"
+- تصفح إدخالاتك القديمة
+- اضغط على الصور لعرضها بحجم كبير
 
-If you don't know any of these, **Ask [Google](https://www.google.com) or someone who builds recoveries**, I don't provide TWRP building support.
+### 3. مراقبة الإحصائيات
+- انتقل لصفحة "الإحصائيات"
+- شاهد الرسم البياني لأنماط مزاجك
+- راجع النسب المئوية لكل حالة مزاجية
 
-You'd also like to do edits on your recovery device tree first if your recovery needs that (e.g. SHRP, etc.)
+### 4. تخصيص الإعدادات
+- فعّل الوضع الليلي للعيون الحساسة
+- فعّل قفل التطبيق لحماية خصوصيتك
+- احذف جميع البيانات عند الحاجة
 
-#### Credits and thanks and stuff like that ####
+## 🔐 الخصوصية والأمان
 
-Made with blek magic by [***Jamie***](https://t.me/henloboi)
+- 🔒 **جميع البيانات محفوظة محلياً** على جهازك فقط
+- 🚫 **لا يتم إرسال أي بيانات** لخوادم خارجية
+- 🛡️ **قفل التطبيق** لحماية إضافية
+- 🗑️ **إمكانية حذف البيانات** في أي وقت
 
-Infinite help from [***ElytrA8***](t.me/ElytrA8)
+## 📐 هيكل الملفات
 
-Recovery building help from [***Pulkit***](t.me/Pulkit077)
+```
+MoodyMe/
+├── index.html          # الصفحة الرئيسية
+├── styles.css          # ملف التصميم
+├── script.js           # الوظائف التفاعلية
+├── manifest.json       # إعدادات PWA
+└── README.md          # هذا الملف
+```
 
-And lastly, all TWRP compiling help from Google.
+## 🎨 التصميم
 
-Enjoy buildbotting.
+- **خط Cairo** العربي الأنيق
+- **ألوان Pastel** مريحة للعين
+- **حواف دائرية** عصرية
+- **تأثيرات حركية سلسة**
+- **تصميم متجاوب** لجميع الشاشات
+
+## 🔄 الميزات المستقبلية
+
+- [ ] تصدير البيانات لـ PDF
+- [ ] مزامنة السحابة (اختيارية)
+- [ ] تذكيرات يومية
+- [ ] تحليلات أكثر تقدماً
+- [ ] مشاركة التقدم
+- [ ] أهداف شخصية
+
+## 🐛 الإبلاغ عن المشاكل
+
+إذا واجهت أي مشاكل أو لديك اقتراحات:
+- تأكد من تحديث المتصفح
+- امسح cache المتصفح
+- تأكد من تفعيل JavaScript
+
+## 📄 الترخيص
+
+هذا المشروع مفتوح المصدر ومتاح للاستخدام الشخصي والتعليمي.
+
+## 💝 شكر خاص
+
+- **LottieFiles** للرسوم المتحركة الجميلة
+- **Google Fonts** لخط Cairo العربي
+- **المجتمع العربي** للمطورين
+
+---
+
+**صُنع بـ ❤️ لمساعدتك في تتبع مزاجك وصحتك النفسية**
+
+*ابدأ رحلتك في فهم مزاجك بشكل أفضل مع MoodyMe!* 🌟
