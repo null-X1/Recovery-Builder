@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodyMe - معرض التطبيق</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .primary-button {
+            background: #6366f1;
+            border-color: #6366f1;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+        }
+        
+        .tech-stack {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .logo { font-size: 3rem; }
+            .description { font-size: 1rem; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">😊</div>
+        <h1>MoodyMe</h1>
+        <p class="description">
+            تطبيق تسجيل المزاج اليومي - اكتشف أنماط مزاجك وحسّن صحتك النفسية
+        </p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🎭</div>
+                <h3>6 حالات مزاجية</h3>
+                <p>رسوم متحركة تفاعلية لكل حالة مزاجية</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">📝</div>
+                <h3>ملاحظات يومية</h3>
+                <p>سجل أفكارك ومشاعرك بالتفصيل</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>إحصائيات ذكية</h3>
+                <p>رسوم بيانية لفهم أنماط مزاجك</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>خصوصية كاملة</h3>
+                <p>بياناتك محفوظة محلياً على جهازك</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🌙</div>
+                <h3>وضع ليلي</h3>
+                <p>تصميم مريح للعيون في جميع الأوقات</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>PWA</h3>
+                <p>قابل للتثبيت على أي جهاز</p>
+            </div>
+        </div>
+        
+        <div class="tech-stack">
+            <h3>التقنيات المستخدمة</h3>
+            <div class="tech-items">
+                <span class="tech-item">HTML5</span>
+                <span class="tech-item">CSS3</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">Lottie Animations</span>
+                <span class="tech-item">PWA</span>
+                <span class="tech-item">LocalStorage</span>
+                <span class="tech-item">Responsive Design</span>
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px;">
+            <a href="index.html" class="cta-button primary-button">🚀 جرب التطبيق الآن</a>
+            <a href="https://github.com" class="cta-button">📋 شاهد الكود</a>
+        </div>
+        
+        <div style="margin-top: 30px; opacity: 0.8;">
+            <p>صُنع بـ ❤️ للمجتمع العربي</p>
+        </div>
+    </div>
+</body>
+</html>

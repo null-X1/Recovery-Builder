@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodyMe - كيف كان يومك؟</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MoodyMe">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>كيف كان يومك؟ 😊</h1>
+            <div class="date">
+                <span id="currentDate"></span>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <button class="nav-btn active" onclick="showPage('home')">الرئيسية</button>
+            <button class="nav-btn" onclick="showPage('history')">الأيام السابقة</button>
+            <button class="nav-btn" onclick="showPage('stats')">الإحصائيات</button>
+            <button class="nav-btn" onclick="showPage('settings')">الإعدادات</button>
+        </nav>
+
+        <!-- Home Page -->
+        <div id="homePage" class="page active">
+            <div class="mood-grid">
+                <div class="mood-card" onclick="selectMood('happy')">
+                    <div class="mood-animation">
+                        <lottie-player 
+                            src="https://assets3.lottiefiles.com/packages/lf20_h9rxdqfb.json" 
+                            background="transparent" 
+                            speed="1" 
+                            style="width: 80px; height: 80px;" 
+                            loop 
+                            autoplay>
+                        </lottie-player>
+                    </div>
+                    <h3 class="mood-name">سعيد</h3>
+                </div>
+
+                <div class="mood-card" onclick="selectMood('normal')">
+                    <div class="mood-animation">
+                        <lottie-player 
+                            src="https://assets9.lottiefiles.com/packages/lf20_x62chJ.json" 
+                            background="transparent" 
+                            speed="1" 
+                            style="width: 80px; height: 80px;" 
+                            loop 
+                            autoplay>
+                        </lottie-player>
+                    </div>
+                    <h3 class="mood-name">عادي</h3>
+                </div>
+
+                <div class="mood-card" onclick="selectMood('sad')">
+                    <div class="mood-animation">
+                        <lottie-player 
+                            src="https://assets4.lottiefiles.com/packages/lf20_qh5z2fdq.json" 
+                            background="transparent" 
+                            speed="1" 
+                            style="width: 80px; height: 80px;" 
+                            loop 
+                            autoplay>
+                        </lottie-player>
+                    </div>
+                    <h3 class="mood-name">حزين</h3>
+                </div>
+
+                <div class="mood-card" onclick="selectMood('angry')">
+                    <div class="mood-animation">
+                        <lottie-player 
+                            src="https://assets1.lottiefiles.com/packages/lf20_wqypkwrb.json" 
+                            background="transparent" 
+                            speed="1" 
+                            style="width: 80px; height: 80px;" 
+                            loop 
+                            autoplay>
+                        </lottie-player>
+                    </div>
+                    <h3 class="mood-name">غاضب</h3>
+                </div>
+
+                <div class="mood-card" onclick="selectMood('depressed')">
+                    <div class="mood-animation">
+                        <lottie-player 
+                            src="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" 
+                            background="transparent" 
+                            speed="1" 
+                            style="width: 80px; height: 80px;" 
+                            loop 
+                            autoplay>
+                        </lottie-player>
+                    </div>
+                    <h3 class="mood-name">مكتئب</h3>
+                </div>
+
+                <div class="mood-card" onclick="selectMood('relaxed')">
+                    <div class="mood-animation">
+                        <lottie-player 
+                            src="https://assets6.lottiefiles.com/packages/lf20_mjlh3hcy.json" 
+                            background="transparent" 
+                            speed="1" 
+                            style="width: 80px; height: 80px;" 
+                            loop 
+                            autoplay>
+                        </lottie-player>
+                    </div>
+                    <h3 class="mood-name">مرتاح</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Entry Page -->
+        <div id="entryPage" class="page">
+            <div class="entry-form">
+                <h2>سجل مزاجك</h2>
+                <div class="selected-mood">
+                    <div id="selectedMoodAnimation"></div>
+                    <h3 id="selectedMoodName"></h3>
+                </div>
+
+                <div class="form-group">
+                    <label for="moodNote">ملاحظاتك عن اليوم</label>
+                    <textarea id="moodNote" placeholder="اكتب عن يومك..."></textarea>
+                </div>
+
+                <div class="media-uploads">
+                    <div class="upload-option">
+                        <label for="imageUpload" class="upload-btn">
+                            📸 إضافة صورة
+                            <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                        </label>
+                        <div id="imagePreview"></div>
+                    </div>
+
+                    <div class="upload-option">
+                        <button class="upload-btn" onclick="toggleRecording()">
+                            🎤 <span id="recordText">تسجيل صوت</span>
+                        </button>
+                        <div id="audioPreview"></div>
+                    </div>
+                </div>
+
+                <button class="save-btn" onclick="saveEntry()">احفظ يومي</button>
+                <button class="back-btn" onclick="showPage('home')">العودة</button>
+            </div>
+        </div>
+
+        <!-- History Page -->
+        <div id="historyPage" class="page">
+            <h2>الأيام السابقة</h2>
+            <div id="historyList" class="history-list">
+                <!-- History entries will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Stats Page -->
+        <div id="statsPage" class="page">
+            <h2>إحصائيات المزاج</h2>
+            <div class="stats-container">
+                <canvas id="moodChart" width="400" height="300"></canvas>
+                <div id="moodStats" class="mood-stats"></div>
+            </div>
+        </div>
+
+        <!-- Settings Page -->
+        <div id="settingsPage" class="page">
+            <h2>الإعدادات</h2>
+            <div class="settings-container">
+                <div class="setting-item">
+                    <label>الوضع الليلي</label>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <label>قفل التطبيق</label>
+                    <label class="switch">
+                        <input type="checkbox" id="lockToggle" onchange="toggleLock()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <button class="delete-btn" onclick="clearAllData()">مسح جميع البيانات</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
